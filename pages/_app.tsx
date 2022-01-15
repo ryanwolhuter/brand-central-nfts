@@ -31,9 +31,13 @@ const GlobalStyles = createGlobalStyle`
  }
 
  body {
-   background-color: #2B2B2B;
-   color: #fff;
-   font-family: 'Readex Pro', sans-serif;
+    color: #fff;
+    font-family: 'Readex Pro', sans-serif;
+    background-color: #030024;
+    background-image: url('colors.png');
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
  }
 
   h1, h2, h3, h4, h5, h6, p {
