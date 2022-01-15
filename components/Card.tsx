@@ -44,26 +44,30 @@ const Claimed = styled.p`
   top: 16px;
   right: 16px;
   padding: 8px;
-  border-radius: 8px;
-  background: rgba(3, 168, 204, 0.2);
+  padding-inline: 16px;
+  border-radius: 20px;
+  background: rgba(214, 225, 228, 0.137);
+  backdrop-filter: blur(8px);
+  box-shadow: 0px 0px 10px rgba(90, 33, 155, 0.24);
 `
 
 const Unclaimed = styled(Claimed)`
-  background: rgba(204, 77, 3, 0.2);
+  background: rgba(36, 224, 215, 0.363);
 `
 
 const Wrapper = styled.div`
   display: grid;
   justify-content: center;
   width: 341px;
-  margin-top: 120px;
+  margin-top: 140px;
   background: linear-gradient(
-    92.09deg,
-    rgba(77, 23, 230, 0.2) 0%,
+    45deg,
+    rgba(92, 67, 185, 0.144) 0%,
     rgba(3, 168, 204, 0.2) 118.36%
   );
   box-shadow: 0px 18px 34px rgba(6, 3, 26, 0.24);
   border-radius: 15px;
+  backdrop-filter: blur(24px);
   position: relative;
   &::before {
     content: '';
@@ -74,7 +78,7 @@ const Wrapper = styled.div`
     bottom: 0;
     border-radius: 15px;
     padding: 1px;
-    background: linear-gradient(45deg, hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 0));
+    background: linear-gradient(45deg, hsla(0, 0%, 100%, 0.2), hsla(0, 0%, 100%, 0));
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
@@ -84,6 +88,7 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   margin-top: 16px;
+  padding-inline: 32px;
 `
 
 const BidDetails = styled.div`
@@ -94,7 +99,7 @@ const BidDetails = styled.div`
   font-weight: normal;
   font-size: 12px;
   line-height: 15px;
-  padding-right: 4px;
+  padding-inline: 32px;
   margin-top: 16px;
   color: #a7f8f8;
 `
@@ -105,10 +110,17 @@ const BuyerAddress = styled.a`
   font-size: 12px;
   line-height: 15px;
   margin-top: 16px;
+  padding-top: 16px;
   margin-bottom: 24px;
+  width: 341px;
   color: white;
   text-decoration: none;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid;
+  border-image: linear-gradient(45deg, #fcfcfcd5, rgba(92, 67, 185, 0.144)) 1;
 
   &:hover {
     text-decoration: underline;
@@ -126,11 +138,11 @@ const PlaceholderOuter = styled.div`
   margin-top: -100px;
   background: linear-gradient(
     135.24deg,
-    rgba(83, 100, 255, 0.17) -2.88%,
-    rgba(157, 118, 250, 0.38) 60.96%
+    rgba(83, 235, 255, 0.17) -2.88%,
+    rgba(126, 151, 216, 0.38) 60.96%
   );
   box-shadow: 0px 40px 20px -30px rgba(6, 3, 26, 0.24);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(40px);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -143,9 +155,9 @@ const PlaceholderOuter = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 1px;
-    background: linear-gradient(45deg, hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 0));
+    background: linear-gradient(45deg, hsla(0, 0%, 100%, 0.2), hsla(0, 0%, 100%, 0));
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
@@ -162,10 +174,10 @@ const PlaceholderInner = styled.div`
   position: relative;
   background: linear-gradient(
     135.24deg,
-    rgba(83, 100, 255, 0.17) -2.88%,
-    rgba(157, 118, 250, 0.54) 60.96%
+    rgba(46, 214, 226, 0.315) -2.88%,
+    rgba(94, 75, 196, 0.54) 60.96%
   );
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(20px);
   border-radius: 10px;
   position: relative;
   &::before {
@@ -175,9 +187,9 @@ const PlaceholderInner = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 1px;
-    background: linear-gradient(45deg, hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 0));
+    background: linear-gradient(45deg, hsla(0, 0%, 100%, 0.2), hsla(0, 0%, 100%, 0));
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
