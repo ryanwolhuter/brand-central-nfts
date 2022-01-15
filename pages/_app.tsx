@@ -5,6 +5,17 @@ import { Provider as WagmiProvider, defaultChains } from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import { createGlobalStyle } from 'styled-components'
 
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <WagmiProvider autoConnect connectors={connectors}>
+      <ApolloProvider client={client}>
+        <Component {...pageProps} />
+        <GlobalStyles />
+      </ApolloProvider>
+    </WagmiProvider>
+  )
+}
+
 function connectors() {
   return [new InjectedConnector({ chains: defaultChains })]
 }
@@ -29,16 +40,3 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
 `
-
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <WagmiProvider autoConnect connectors={connectors}>
-      <ApolloProvider client={client}>
-        <Component {...pageProps} />
-        <GlobalStyles />
-      </ApolloProvider>
-    </WagmiProvider>
-  )
-}
-
-export default MyApp

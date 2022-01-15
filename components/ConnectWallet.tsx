@@ -25,16 +25,12 @@ export default function ConnectWallet() {
     <Wrapper>
       {accountData ? (
         <div>
-          {accountData.ens?.name
-            ? `${accountData.ens?.name} (${accountData.address})`
-            : accountData.address}
-          <div>Connected to {accountData.connector?.name}</div>
+          {accountData.address}
           <button onClick={disconnect}>Disconnect</button>
         </div>
       ) : (
         <button
           disabled={!metamask.ready}
-          key={metamask.id}
           onClick={() => connect(metamask)}
         >
           Unlock with MetaMask

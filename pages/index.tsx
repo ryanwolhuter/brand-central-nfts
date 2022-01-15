@@ -5,21 +5,15 @@ import ConnectWallet from '../components/ConnectWallet'
 import Tickers from '../components/Tickers'
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
-  
-`
-
-const Main = styled.main`
-  margin-inline: auto;
-  padding-inline: 32px;
-`
-
 const Home: NextPage = () => {
   return (
     <Wrapper>
       <Head>
         <title>Brand Central NFTs</title>
-        <meta name="description" content="NFTs from the Brand Central Auction" />
+        <meta
+          name="description"
+          content="NFTs from the Brand Central Auction"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -34,3 +28,10 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+const Wrapper = styled.div``
+
+const Main = styled.main`
+  margin-inline: auto;
+  padding-inline: 32px;
+`
