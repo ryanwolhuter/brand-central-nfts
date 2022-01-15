@@ -3,23 +3,28 @@ import Head from 'next/head'
 import ClientOnly from '../components/ClientOnly'
 import ConnectWallet from '../components/ConnectWallet'
 import Tickers from '../components/Tickers'
+import styled from 'styled-components'
+
+const Wrapper = styled.div``
+
+const Main = styled.main``
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <Wrapper>
       <Head>
         <title>Brand Central NFTs</title>
         <meta name="description" content="NFTs from the Brand Central Auction" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <Main>
         <ClientOnly>
           <ConnectWallet />
           <Tickers />
         </ClientOnly>
-      </main>
-    </div>
+      </Main>
+    </Wrapper>
   )
 }
 
