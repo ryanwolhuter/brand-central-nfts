@@ -22,6 +22,7 @@ const GlobalStyles = createGlobalStyle`
  body {
    background-color: #2B2B2B;
    color: #fff;
+   font-family: 'Readex Pro', sans-serif;
  }
 `
 
