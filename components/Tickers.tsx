@@ -1,12 +1,34 @@
 import { useQuery, gql } from '@apollo/client'
+import { BigNumber } from 'ethers'
+
+type Ticker = {
+  id: string
+  shbBid: BigNumber
+  bidder: string
+  biddingEnd: BigNumber
+  numberOfBidsReceived: BigNumber
+  nftClaimed: boolean
+  tokenURI: string
+  imageURI: string
+  name: string
+  description: string
+  uriLastUpdated: BigNumber
+}
 
 const query = gql`
   {
-      tickers {
+    tickers {
       id
+      shbBid
+      bidder
+      biddingEnd
+      numberOfBidsReceived
+      nftClaimed
+      tokenURI
+      imageURI
       name
       description
-      imageURI
+      uriLastUpdated
     }
   }
 `
@@ -17,7 +39,7 @@ export default function Tickers() {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error :(</p>
 
-  const tickers = data.tickers
+  const tickers: Ticker[] = data.tickers
 
   return (
     <div>

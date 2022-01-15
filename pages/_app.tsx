@@ -10,9 +10,9 @@ function connectors() {
 }
 
 const GlobalStyles = createGlobalStyle`
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
 
  html, body {
    margin: 0;
