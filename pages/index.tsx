@@ -29,7 +29,10 @@ const Home: NextPage = () => {
 
 export default Home
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  margin-top: 80px;
+  margin-bottom: 180px;
+`
 
 const Main = styled.main`
   margin-inline: auto;
