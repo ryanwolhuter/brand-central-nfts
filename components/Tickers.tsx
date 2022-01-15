@@ -1,18 +1,18 @@
 import { useQuery, gql } from '@apollo/client'
 import { BigNumber } from 'ethers'
 
-type Ticker = {
+export type Ticker = {
   id: string
-  shbBid: BigNumber
+  shbBid: string
   bidder: string
-  biddingEnd: BigNumber
-  numberOfBidsReceived: BigNumber
+  biddingEnd: string
+  numberOfBidsReceived: string
   nftClaimed: boolean
   tokenURI: string
   imageURI: string
   name: string
   description: string
-  uriLastUpdated: BigNumber
+  uriLastUpdated: string
 }
 
 const query = gql`
