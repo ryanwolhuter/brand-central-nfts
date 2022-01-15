@@ -64,6 +64,22 @@ const Wrapper = styled.div`
   );
   box-shadow: 0px 18px 34px rgba(6, 3, 26, 0.24);
   border-radius: 15px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    padding: 1px;
+    background: linear-gradient(45deg, hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 0));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
 `
 
 const Title = styled.h1`
@@ -92,6 +108,7 @@ const BuyerAddress = styled.a`
   margin-bottom: 24px;
   color: white;
   text-decoration: none;
+  z-index: 1;
 
   &:hover {
     text-decoration: underline;
@@ -118,6 +135,22 @@ const PlaceholderOuter = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    padding: 1px;
+    background: linear-gradient(45deg, hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 0));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
 `
 
 const PlaceholderInner = styled.div`
@@ -134,6 +167,22 @@ const PlaceholderInner = styled.div`
   );
   backdrop-filter: blur(4px);
   border-radius: 10px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    padding: 1px;
+    background: linear-gradient(45deg, hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 0));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
 `
 
 const ImageTitle = styled.h1`
