@@ -1,36 +1,45 @@
+import styled from 'styled-components'
 import { useAccount, useConnect } from 'wagmi'
 
 export default function ConnectWallet() {
-  const [{ data: connectData, error: connectError }, connect] = useConnect()
-  const [{ data: accountData }, disconnect] = useAccount({
-    fetchEns: true
-  })
+  const [{ data: connectData }, connect] = useConnect()
+  const [{ data: accountData }, disconnect] = useAccount()
 
-  if (accountData) {
-    return (
-      <div>
-        <img src={accountData.ens?.avatar} alt="ENS Avatar" />
+  const metamask = connectData.connectors?.[0]
+
+  const Wrapper = styled.div`
+    position: fixed;
+    width: 100vw;
+    height: ${connectData.connected ? 'auto' : '100%'};
+    top: 0;
+    left: 0;
+    background: hsla(0, 0%, 100%, 0.5);
+    backdrop-filter: blur(24px);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `
+
+  return (
+    <Wrapper>
+      {accountData ? (
         <div>
           {accountData.ens?.name
             ? `${accountData.ens?.name} (${accountData.address})`
             : accountData.address}
+          <div>Connected to {accountData.connector?.name}</div>
+          <button onClick={disconnect}>Disconnect</button>
         </div>
-        <div>Connected to {accountData.connector?.name}</div>
-        <button onClick={disconnect}>Disconnect</button>
-      </div>
-    )
-  }
-
-  return (
-    <div>
-      {connectData.connectors.map((x) => (
-        <button disabled={!x.ready} key={x.id} onClick={() => connect(x)}>
-          {x.name}
-          {!x.ready && ' (unsupported)'}
+      ) : (
+        <button
+          disabled={!metamask.ready}
+          key={metamask.id}
+          onClick={() => connect(metamask)}
+        >
+          Unlock with MetaMask
         </button>
-      ))}
-
-      {connectError && <div>{connectError?.message ?? 'Failed to connect'}</div>}
-    </div>
+      )}
+    </Wrapper>
   )
 }
