@@ -5,9 +5,14 @@ import ConnectWallet from '../components/ConnectWallet'
 import Tickers from '../components/Tickers'
 import styled from 'styled-components'
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  
+`
 
-const Main = styled.main``
+const Main = styled.main`
+  margin-inline: auto;
+  padding-inline: 32px;
+`
 
 const Home: NextPage = () => {
   return (
