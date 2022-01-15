@@ -1,5 +1,6 @@
 import { useQuery, gql } from '@apollo/client'
-import { BigNumber } from 'ethers'
+import styled from 'styled-components'
+import Card from './Card'
 
 export type Ticker = {
   id: string
@@ -42,17 +43,18 @@ export default function Tickers() {
   const tickers: Ticker[] = data.tickers
 
   return (
-    <div>
-      <h1>Tickers</h1>
-      <ul>
-        {tickers.map(ticker => (
-          <li key={ticker.id}>
-            <h2>{ticker.id}</h2>
-            <p>{ticker.description}</p>
-            <img src={ticker.imageURI} alt={ticker.name} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Wrapper>
+      {tickers.map((ticker) => (
+        <Card ticker={ticker} key={ticker.id} />
+      ))}
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+  display: grid;
+  width: 100%;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(341px, 1fr));
+  gap: 16px;
+`
